@@ -2,14 +2,18 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity  } from 'react-native';
 
 //import Navigation from './Navigation.js';
-import {StackNavigator} from 'react-navigation';
+//import {StackNavigator} from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
+
+//THIS CLASS IS ONLY FOR BUILDING BECAUSE I HAD PROBLEMS WITH PASSING THE PROPS.NAVIGATION TO THIS COMPONENT
 export default class TopBar extends React.Component {
+
   render() {
     return (
         
         <View style={styles.header}>
-          <TouchableOpacity  style={styles.backTouchable} hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}>
+          <TouchableOpacity  onPress={() => this.navigation.navigate('Home')} style={styles.backTouchable} hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}>
             
             <Image style={styles.backArrow} source={require('../imgs/backArrow.png')}/>
           </TouchableOpacity>
@@ -50,3 +54,4 @@ const styles = StyleSheet.create({
     height: 24,
   }
 });
+
