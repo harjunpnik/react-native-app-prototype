@@ -49,11 +49,17 @@ return(randomValue)
             <Text style={styles.headerText}> Dice Roller </Text>
 
         </View>
+        <View style={styles.diceContainer}></View>
+        
+        <View style={styles.spacerTop}></View>
+
         <View style={styles.itemList}>
-            <View style={styles.time}>
-            <Text>RESULT: {this.state.d4Result}</Text>
+            <View style={styles.item}>
+            <View style={styles.resultBox}>
+            <Text style={styles.Text}> {this.state.d4Result}</Text>
+            </View>
                 <Button
-                    title=" roll d4"
+                    title=" roll    d4"
                     onPress={() => {
                         const randomValue = this.rolldiebutton(1,4);
                         this.setState ({ d4Result: randomValue })
@@ -61,10 +67,14 @@ return(randomValue)
                 />
             </View>
 
-            <View style={styles.time}>
-            <Text>RESULT: {this.state.d6Result}</Text>
+            <View style={styles.spacer}></View>
+
+            <View style={styles.item}>
+            <View style={styles.resultBox}>
+            <Text style={styles.Text}> {this.state.d6Result}</Text>
+            </View>
                 <Button
-                    title=" roll d6"
+                    title=" roll    d6"
                     onPress={() => {
                         const randomValue = this.rolldiebutton(1,6);
                         this.setState ({ d6Result: randomValue })
@@ -72,10 +82,14 @@ return(randomValue)
                 />
             </View>
 
-            <View style={styles.time}>
-            <Text>RESULT: {this.state.d8Result}</Text>
+            <View style={styles.spacer}></View>
+
+            <View style={styles.item}>
+            <View style={styles.resultBox}>
+            <Text style={styles.Text}> {this.state.d8Result}</Text>
+            </View>
                 <Button
-                    title=" roll d8"
+                    title=" roll    d8"
                     onPress={() => {
                         const randomValue = this.rolldiebutton(1,8);
                         this.setState ({ d8Result: randomValue })
@@ -84,9 +98,13 @@ return(randomValue)
             </View>
         </View>
 
+        <View style={styles.spacerTop}></View> 
+
         <View style={styles.itemList}>
-            <View style={styles.time}>
-            <Text>RESULT: {this.state.d10Result}</Text>
+            <View style={styles.item}>
+            <View style={styles.resultBox}>
+            <Text style={styles.Text}> {this.state.d10Result}</Text>
+            </View>
                 <Button
                     title=" roll d10"
                     onPress={() => {
@@ -96,8 +114,12 @@ return(randomValue)
                 />
             </View>
 
-            <View style={styles.time}>
-            <Text>RESULT: {this.state.d12Result}</Text>
+            <View style={styles.spacer}></View>
+
+            <View style={styles.item}>
+            <View style={styles.resultBox}>
+            <Text style={styles.Text}> {this.state.d12Result}</Text>
+            </View>
                 <Button
                     title=" roll d12"
                     onPress={() => {
@@ -107,8 +129,12 @@ return(randomValue)
                 />
             </View>
 
-            <View style={styles.time}>
-            <Text>RESULT: {this.state.d100Result}</Text>
+            <View style={styles.spacer}></View>
+
+            <View style={styles.item}>
+            <View style={styles.resultBox}>
+            <Text style={styles.Text}> {this.state.d100Result}</Text>
+            </View>
                 <Button
                     title=" roll d100"
                     onPress={() => {
@@ -119,10 +145,14 @@ return(randomValue)
             </View>
              
         </View>
-          
+
+        <View style={styles.spacerTop}></View>
+
         <View style={styles.itemList}>
-            <View style={styles.time}>
-            <Text>RESULT: {this.state.d20Result}</Text>
+            <View style={styles.item}>
+            <View style={styles.resultBox}>
+                <Text style={styles.Text}> {this.state.d20Result}</Text>
+            </View>
                 <Button
                     title=" roll d20"
                     onPress={() => {
@@ -144,21 +174,50 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  spacer:{
+    width: 40,
+  },
+  spacerTop:{
+    height: 70,
+  },
+  diceContainer:{
+    top: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   itemList: {
-    top: 10,
     flexDirection: 'row', 
     flexWrap: 'wrap',
     justifyContent: 'center',
   },
     item:{
-      backgroundColor: '#1565c0',
-      width: 180 ,
-      height: 205,
+      
+      width: 80 ,
+      height: 100,
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: 5,
       
     },
+    Text:{
+        
+        bottom: 15,
+        color: 'white',
+        fontSize: 40,
+        top: 1,
+        right: 4,
+        fontWeight: 'bold',
+        fontFamily: 'Roboto',
+        
+      },
+      resultBox:{
+        backgroundColor: '#1565c0',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 5,
+        width: 80 ,
+        height: 80,
+      },
   header:{
     backgroundColor: '#1565c0',
     alignItems: 'center',
