@@ -21,8 +21,20 @@ export default class HomeScreen extends React.Component {
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Text>Home Screen</Text>
                 <Button
-                title="Go to Turn Order"
+                title="Turn Order"
                 onPress={() => this.props.navigation.navigate('Turn')}
+                />
+                <Button
+                title="MTG Counter"
+                onPress={() => this.props.navigation.navigate('Magic')}
+                />
+                <Button
+                title="Dice Roller"
+                onPress={() => this.props.navigation.navigate('Dice')}
+                />
+                <Button
+                title="Character Stats"
+                onPress={() => this.props.navigation.navigate('Char')}
                 />
             </View>
 

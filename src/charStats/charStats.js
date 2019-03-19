@@ -6,7 +6,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 
-export default class MagicCounter extends React.Component {
+export default class charStats extends React.Component {
 
   // I strugled with passing the props.navigation to TopBar.js so lets do it all in one file...
   static navigationOptions = {
@@ -24,11 +24,11 @@ export default class MagicCounter extends React.Component {
               
               <Image style={styles.backArrow} source={require('../imgs/backArrow.png')}/>
             </TouchableOpacity>
-            <Text style={styles.headerText}> Magic Life Counter </Text>
+            <Text style={styles.headerText}> Character Stats </Text>
 
         </View>
         <View>
-          <Text>Magic Life Counter</Text>
+          <Text>Character Stats</Text>
         </View>
       </View>
     );
