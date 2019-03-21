@@ -52,13 +52,17 @@ return(randomValue)
         <View style={styles.diceContainer}></View>
         
         <View style={styles.spacerTop}></View>
+        <View style={styles.spacerTop2}></View>
+        <View style={styles.spacerTop2}></View>
 
         <View style={styles.itemList}>
             <View style={styles.item}>
             <View style={styles.resultBox}>
             <Text style={styles.Text}> {this.state.d4Result}</Text>
             </View>
-                <Button
+
+            <View style={styles.spacerTop2}></View>
+                <Button raised
                     title=" roll    d4"
                     onPress={() => {
                         const randomValue = this.rolldiebutton(1,4);
@@ -73,7 +77,9 @@ return(randomValue)
             <View style={styles.resultBox}>
             <Text style={styles.Text}> {this.state.d6Result}</Text>
             </View>
-                <Button
+
+            <View style={styles.spacerTop2}></View>
+                <Button raised
                     title=" roll    d6"
                     onPress={() => {
                         const randomValue = this.rolldiebutton(1,6);
@@ -88,7 +94,9 @@ return(randomValue)
             <View style={styles.resultBox}>
             <Text style={styles.Text}> {this.state.d8Result}</Text>
             </View>
-                <Button
+
+            <View style={styles.spacerTop2}></View>
+                <Button raised
                     title=" roll    d8"
                     onPress={() => {
                         const randomValue = this.rolldiebutton(1,8);
@@ -105,7 +113,9 @@ return(randomValue)
             <View style={styles.resultBox}>
             <Text style={styles.Text}> {this.state.d10Result}</Text>
             </View>
-                <Button
+
+            <View style={styles.spacerTop2}></View>
+                <Button raised
                     title=" roll d10"
                     onPress={() => {
                         const randomValue = this.rolldiebutton(0,9);
@@ -120,7 +130,9 @@ return(randomValue)
             <View style={styles.resultBox}>
             <Text style={styles.Text}> {this.state.d12Result}</Text>
             </View>
-                <Button
+
+            <View style={styles.spacerTop2}></View>
+                <Button raised 
                     title=" roll d12"
                     onPress={() => {
                         const randomValue = this.rolldiebutton(1,12);
@@ -135,7 +147,9 @@ return(randomValue)
             <View style={styles.resultBox}>
             <Text style={styles.Text}> {this.state.d100Result}</Text>
             </View>
-                <Button
+
+            <View style={styles.spacerTop2}></View>
+                <Button raised
                     title=" roll d100"
                     onPress={() => {
                         const randomValue = this.rolldiebutton(0,99);
@@ -153,7 +167,9 @@ return(randomValue)
             <View style={styles.resultBox}>
                 <Text style={styles.Text}> {this.state.d20Result}</Text>
             </View>
-                <Button
+
+            <View style={styles.spacerTop2}></View>
+                <Button raised
                     title=" roll d20"
                     onPress={() => {
                         const randomValue = this.rolldiebutton(1,20);
@@ -180,6 +196,9 @@ const styles = StyleSheet.create({
   spacerTop:{
     height: 70,
   },
+  spacerTop2:{
+    height: 4,
+  },
   diceContainer:{
     top: 20,
     justifyContent: 'center',
@@ -204,7 +223,7 @@ const styles = StyleSheet.create({
         bottom: 15,
         color: 'white',
         fontSize: 40,
-        top: 1,
+        top: 0,
         right: 4,
         fontWeight: 'bold',
         fontFamily: 'Roboto',
@@ -217,6 +236,8 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         width: 80 ,
         height: 80,
+        borderWidth: 2,
+        borderColor: 'black',
       },
   header:{
     backgroundColor: '#1565c0',

@@ -18,41 +18,47 @@ export default class HomeScreen extends React.Component {
                 <Text style={styles.headerText}> Board Game Counters </Text>
             </View>
 
-            <View style={styles.itemList}>
+            <View style={styles.homeScreenBlock}>
 
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('Char')} style={styles.item}>
+              <View style={styles.spacerTop}></View>
+
+              <View style={styles.itemList}>
+
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Char')} style={styles.item}>
+                    
+                    <Image style={styles.icon} source={require('./imgs/stats.png')}/>
+                    <Text style={styles.imgText} >Character Stats</Text>
+                  </TouchableOpacity>
                   
-                  <Image style={styles.icon} source={require('./imgs/stats.png')}/>
-                  <Text style={styles.imgText} >Character Stats</Text>
+                  <View style={styles.spacer}></View>
+                  
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Dice')} style={styles.item}>
+                    
+                    <Image style={styles.icon} source={require('./imgs/die.png')}/>
+                    <Text style={styles.imgText} >Dice Roller</Text>
+                  </TouchableOpacity>
+
+              </View>
+
+              <View style={styles.spacerTop}></View>
+
+              <View style={styles.itemList}>
+
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Magic')} style={styles.item}>
+                  
+                  <Image style={styles.icon} source={require('./imgs/mtg.png')}/>
+                  <Text style={styles.imgText} >MTG Counter</Text>
                 </TouchableOpacity>
-                
+
                 <View style={styles.spacer}></View>
-                
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('Dice')} style={styles.item}>
+
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Turn')} style={styles.item}>
                   
-                  <Image style={styles.icon} source={require('./imgs/die.png')}/>
-                  <Text style={styles.imgText} >Dice Roller</Text>
+                  <Image style={styles.icon} source={require('./imgs/list.png')}/>
+                  <Text style={styles.imgText} >Turn Order</Text>
                 </TouchableOpacity>
 
-            </View>
-
-            <View style={styles.spacerTop}></View>
-
-            <View style={styles.itemList}>
-
-              <TouchableOpacity onPress={() => this.props.navigation.navigate('Magic')} style={styles.item}>
-                
-                <Image style={styles.icon} source={require('./imgs/mtg.png')}/>
-                <Text style={styles.imgText} >MTG Counter</Text>
-              </TouchableOpacity>
-
-              <View style={styles.spacer}></View>
-
-              <TouchableOpacity onPress={() => this.props.navigation.navigate('Turn')} style={styles.item}>
-                
-                <Image style={styles.icon} source={require('./imgs/list.png')}/>
-                <Text style={styles.imgText} >Turn Order</Text>
-              </TouchableOpacity>
+              </View>
 
             </View>
 
@@ -67,6 +73,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
       },
+      homeScreenBlock:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        
+      },
     itemList: {
       top: 10,
       flexDirection: 'row', 
@@ -77,7 +88,7 @@ const styles = StyleSheet.create({
       width: 20,
     },
     spacerTop:{
-      height: 10,
+      height: 50,
     },
     item:{
       backgroundColor: '#1565c0',

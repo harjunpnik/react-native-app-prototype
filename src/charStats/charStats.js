@@ -107,7 +107,7 @@ export default class charStats extends React.Component {
 
             {/*Decrease Button*/}
             <View style={styles.item}> 
-                <Button
+                <Button raised
                     title="-"
                     onPress={() => {
                       this.setState ({ str: this.state.str - 1 });
@@ -126,7 +126,7 @@ export default class charStats extends React.Component {
 
             {/*Increase Button*/}
             <View style={styles.item}> 
-                <Button
+                <Button raised
                     title="+"
                     onPress={() => {
                       this.setState ({ str: this.state.str + 1 });
@@ -172,7 +172,7 @@ export default class charStats extends React.Component {
 
             {/*Decrease Button*/}
             <View style={styles.item}> 
-                <Button
+                <Button raised
                     title="-"
                     onPress={() => {
                       this.setState ({ dex: this.state.dex - 1 });
@@ -191,7 +191,7 @@ export default class charStats extends React.Component {
 
             {/*Increase Button*/}
             <View style={styles.item}> 
-                <Button
+                <Button raised
                     title="+"
                     onPress={() => {
                       this.setState ({ dex: this.state.dex + 1 });
@@ -237,7 +237,7 @@ export default class charStats extends React.Component {
 
           {/*Decrease Button*/}
           <View style={styles.item}> 
-              <Button
+              <Button raised
                   title="-"
                   onPress={() => {
                     this.setState ({ con: this.state.con - 1 });
@@ -256,7 +256,7 @@ export default class charStats extends React.Component {
 
           {/*Increase Button*/}
           <View style={styles.item}> 
-              <Button
+              <Button raised
                   title="+"
                   onPress={() => {
                     this.setState ({ con: this.state.con + 1 });
@@ -302,7 +302,7 @@ export default class charStats extends React.Component {
 
           {/*Decrease Button*/}
           <View style={styles.item}> 
-              <Button
+              <Button raised
                   title="-"
                   onPress={() => {
                     this.setState ({ int: this.state.int - 1 });
@@ -321,7 +321,7 @@ export default class charStats extends React.Component {
 
           {/*Increase Button*/}
           <View style={styles.item}> 
-              <Button
+              <Button raised
                   title="+"
                   onPress={() => {
                     this.setState ({ int: this.state.int + 1 });
@@ -368,7 +368,7 @@ export default class charStats extends React.Component {
 
           {/*Decrease Button*/}
           <View style={styles.item}> 
-              <Button
+              <Button raised
                   title="-"
                   onPress={() => {
                     this.setState ({ wis: this.state.wis - 1 });
@@ -387,7 +387,7 @@ export default class charStats extends React.Component {
 
           {/*Increase Button*/}
           <View style={styles.item}> 
-              <Button
+              <Button raised
                   title="+"
                   onPress={() => {
                     this.setState ({ wis: this.state.wis + 1 });
@@ -435,7 +435,7 @@ export default class charStats extends React.Component {
 
           {/*Decrease Button*/}
           <View style={styles.item}> 
-              <Button
+              <Button raised
                   title="-"
                   onPress={() => {
                     this.setState ({ cha: this.state.cha - 1 });
@@ -454,7 +454,7 @@ export default class charStats extends React.Component {
 
           {/*Increase Button*/}
           <View style={styles.item}> 
-              <Button
+              <Button raised
                   title="+"
                   onPress={() => {
                     this.setState ({ cha: this.state.cha + 1 });
