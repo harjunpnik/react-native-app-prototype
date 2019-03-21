@@ -88,12 +88,24 @@ export default class charStats extends React.Component {
         </View>
         <View style={styles.statBlock}>
 
+          <View style={styles.spacerTop2}></View>
+
+          {/* STR*/}
           <View style={styles.statList}>
 
+            {/* ICON*/}
+            <View style={styles.item}> 
+              <Image style={styles.icon} source={require('../imgs/str.png')}/>
+            </View>
+
+            <View style={styles.spacer}></View>
+
+            {/* Flavour Text: STR*/}
             <View style={styles.item}> 
               <Text style={styles.flavourText}>STR</Text>
             </View>
 
+            {/*Decrease Button*/}
             <View style={styles.item}> 
                 <Button
                     title="-"
@@ -105,14 +117,14 @@ export default class charStats extends React.Component {
                 />
             </View>
 
+            {/* Stat Result*/}
             <View style={styles.item}>
-
               <View style={styles.resultBox}>
                 <Text style={styles.Text}> {this.state.str}</Text>
               </View>
-
             </View>
 
+            {/*Increase Button*/}
             <View style={styles.item}> 
                 <Button
                     title="+"
@@ -124,19 +136,347 @@ export default class charStats extends React.Component {
                 />
             </View>
 
+            {/* Flavour Text: MOD*/}
             <View style={styles.item}> 
               <Text style={styles.flavourText}>MOD</Text>
             </View>
 
             <View style={styles.spacer}></View>
 
-            <View style={styles.item}>
-            
+            {/* MOD Result*/}
+            <View style={styles.item}>            
               <View style={styles.resultBox}> 
                   <Text style={styles.Text}> {this.state.strMod}</Text>
               </View>
-
             </View>
+
+          </View>
+
+
+          <View style={styles.spacerTop}></View>
+
+          {/* DEX*/}
+          <View style={styles.statList}>
+
+            {/* ICON*/}
+            <View style={styles.item}> 
+              <Image style={styles.icon} source={require('../imgs/dex.png')}/>
+            </View>
+
+            <View style={styles.spacer}></View>
+
+            {/* Flavour Text: DEX*/}
+            <View style={styles.item}> 
+              <Text style={styles.flavourText}>DEX</Text>
+            </View>
+
+            {/*Decrease Button*/}
+            <View style={styles.item}> 
+                <Button
+                    title="-"
+                    onPress={() => {
+                      this.setState ({ dex: this.state.dex - 1 });
+                      const modValue = this.calcModValue(this.state.dex - 1);
+                      this.setState ({ dexMod: modValue});
+                    }}
+                />
+            </View>
+
+            {/* Stat Result*/}
+            <View style={styles.item}>
+              <View style={styles.resultBox}>
+                <Text style={styles.Text}> {this.state.dex}</Text>
+              </View>
+            </View>
+
+            {/*Increase Button*/}
+            <View style={styles.item}> 
+                <Button
+                    title="+"
+                    onPress={() => {
+                      this.setState ({ dex: this.state.dex + 1 });
+                      const modValue = this.calcModValue(this.state.dex + 1);
+                      this.setState ({ dexMod: modValue});
+                    }}
+                />
+            </View>
+
+            {/* Flavour Text: MOD*/}
+            <View style={styles.item}> 
+              <Text style={styles.flavourText}>MOD</Text>
+            </View>
+
+            <View style={styles.spacer}></View>
+
+            {/* MOD Result*/}
+            <View style={styles.item}>            
+              <View style={styles.resultBox}> 
+                  <Text style={styles.Text}> {this.state.dexMod}</Text>
+              </View>
+            </View>
+
+          </View>
+
+
+          <View style={styles.spacerTop}></View>
+
+          {/* CON*/}
+          <View style={styles.statList}>
+
+          {/* ICON*/}
+          <View style={styles.item}> 
+            <Image style={styles.icon} source={require('../imgs/cons.png')}/>
+          </View>
+
+          <View style={styles.spacer}></View>
+
+          {/* Flavour Text: CON*/}
+          <View style={styles.item}> 
+            <Text style={styles.flavourText}>CON</Text>
+          </View>
+
+          {/*Decrease Button*/}
+          <View style={styles.item}> 
+              <Button
+                  title="-"
+                  onPress={() => {
+                    this.setState ({ con: this.state.con - 1 });
+                    const modValue = this.calcModValue(this.state.con - 1);
+                    this.setState ({ conMod: modValue});
+                  }}
+              />
+          </View>
+
+          {/* Stat Result*/}
+          <View style={styles.item}>
+            <View style={styles.resultBox}>
+              <Text style={styles.Text}> {this.state.con}</Text>
+            </View>
+          </View>
+
+          {/*Increase Button*/}
+          <View style={styles.item}> 
+              <Button
+                  title="+"
+                  onPress={() => {
+                    this.setState ({ con: this.state.con + 1 });
+                    const modValue = this.calcModValue(this.state.con + 1);
+                    this.setState ({ conMod: modValue});
+                  }}
+              />
+          </View>
+
+          {/* Flavour Text: MOD*/}
+          <View style={styles.item}> 
+            <Text style={styles.flavourText}>MOD</Text>
+          </View>
+
+          <View style={styles.spacer}></View>
+
+          {/* MOD Result*/}
+          <View style={styles.item}>            
+            <View style={styles.resultBox}> 
+                <Text style={styles.Text}> {this.state.conMod}</Text>
+            </View>
+          </View>
+
+          </View>
+
+
+          <View style={styles.spacerTop}></View>
+
+          {/* INT*/}
+          <View style={styles.statList}>
+
+            {/* ICON*/}
+            <View style={styles.item}> 
+              <Image style={styles.icon} source={require('../imgs/int.png')}/>
+            </View>
+
+            <View style={styles.spacer}></View>
+
+          {/* Flavour Text: INT*/}
+          <View style={styles.item}> 
+            <Text style={styles.flavourText}>INT</Text>
+          </View>
+
+          {/*Decrease Button*/}
+          <View style={styles.item}> 
+              <Button
+                  title="-"
+                  onPress={() => {
+                    this.setState ({ int: this.state.int - 1 });
+                    const modValue = this.calcModValue(this.state.int - 1);
+                    this.setState ({ intMod: modValue});
+                  }}
+              />
+          </View>
+
+          {/* Stat Result*/}
+          <View style={styles.item}>
+            <View style={styles.resultBox}>
+              <Text style={styles.Text}> {this.state.int}</Text>
+            </View>
+          </View>
+
+          {/*Increase Button*/}
+          <View style={styles.item}> 
+              <Button
+                  title="+"
+                  onPress={() => {
+                    this.setState ({ int: this.state.int + 1 });
+                    const modValue = this.calcModValue(this.state.int + 1);
+                    this.setState ({ intMod: modValue});
+                  }}
+              />
+          </View>
+
+          {/* Flavour Text: MOD*/}
+          <View style={styles.item}> 
+            <Text style={styles.flavourText}>MOD</Text>
+          </View>
+
+          <View style={styles.spacer}></View>
+
+          {/* MOD Result*/}
+          <View style={styles.item}>            
+            <View style={styles.resultBox}> 
+                <Text style={styles.Text}> {this.state.intMod}</Text>
+            </View>
+          </View>
+
+          </View>
+
+
+          <View style={styles.spacerTop}></View>
+
+          {/* WIS*/}
+          <View style={styles.statList}>
+
+
+            {/* ICON*/}
+            <View style={styles.item}> 
+              <Image style={styles.icon} source={require('../imgs/wis.png')}/>
+            </View>
+
+            <View style={styles.spacer}></View>
+
+          {/* Flavour Text: WIS*/}
+          <View style={styles.item}> 
+            <Text style={styles.flavourText}>WIS</Text>
+          </View>
+
+          {/*Decrease Button*/}
+          <View style={styles.item}> 
+              <Button
+                  title="-"
+                  onPress={() => {
+                    this.setState ({ wis: this.state.wis - 1 });
+                    const modValue = this.calcModValue(this.state.wis - 1);
+                    this.setState ({ wisMod: modValue});
+                  }}
+              />
+          </View>
+
+          {/* Stat Result*/}
+          <View style={styles.item}>
+            <View style={styles.resultBox}>
+              <Text style={styles.Text}> {this.state.wis}</Text>
+            </View>
+          </View>
+
+          {/*Increase Button*/}
+          <View style={styles.item}> 
+              <Button
+                  title="+"
+                  onPress={() => {
+                    this.setState ({ wis: this.state.wis + 1 });
+                    const modValue = this.calcModValue(this.state.wis + 1);
+                    this.setState ({ wisMod: modValue});
+                  }}
+              />
+          </View>
+
+          {/* Flavour Text: MOD*/}
+          <View style={styles.item}> 
+            <Text style={styles.flavourText}>MOD</Text>
+          </View>
+
+          <View style={styles.spacer}></View>
+
+          {/* MOD Result*/}
+          <View style={styles.item}>            
+            <View style={styles.resultBox}> 
+                <Text style={styles.Text}> {this.state.wisMod}</Text>
+            </View>
+          </View>
+
+          </View>
+
+
+
+          <View style={styles.spacerTop}></View>
+
+          {/* CHA*/}
+          <View style={styles.statList}>
+
+
+            {/* ICON*/}
+            <View style={styles.item}> 
+              <Image style={styles.icon} source={require('../imgs/cha.png')}/>
+            </View>
+
+            <View style={styles.spacer}></View>
+
+          {/* Flavour Text: CON*/}
+          <View style={styles.item}> 
+            <Text style={styles.flavourText}>CHA</Text>
+          </View>
+
+          {/*Decrease Button*/}
+          <View style={styles.item}> 
+              <Button
+                  title="-"
+                  onPress={() => {
+                    this.setState ({ cha: this.state.cha - 1 });
+                    const modValue = this.calcModValue(this.state.cha - 1);
+                    this.setState ({ chaMod: modValue});
+                  }}
+              />
+          </View>
+
+          {/* Stat Result*/}
+          <View style={styles.item}>
+            <View style={styles.resultBox}>
+              <Text style={styles.Text}> {this.state.cha}</Text>
+            </View>
+          </View>
+
+          {/*Increase Button*/}
+          <View style={styles.item}> 
+              <Button
+                  title="+"
+                  onPress={() => {
+                    this.setState ({ cha: this.state.cha + 1 });
+                    const modValue = this.calcModValue(this.state.cha + 1);
+                    this.setState ({ chaMod: modValue});
+                  }}
+              />
+          </View>
+
+          {/* Flavour Text: MOD*/}
+          <View style={styles.item}> 
+            <Text style={styles.flavourText}>MOD</Text>
+          </View>
+
+          <View style={styles.spacer}></View>
+
+          {/* MOD Result*/}
+          <View style={styles.item}>            
+            <View style={styles.resultBox}> 
+                <Text style={styles.Text}> {this.state.chaMod}</Text>
+            </View>
+          </View>
 
           </View>
 
@@ -162,6 +502,19 @@ const styles = StyleSheet.create({
   spacer:{
     width: 5,
   },
+  spacerTop:{
+    height: 40,
+  },
+  spacerTop2:{
+    height: 15,
+  },
+  icon:{
+    width: 40 ,
+    height: 40,
+    borderWidth: 2,
+    borderColor: 'black',
+    borderRadius: 5,
+  },
   flavourText:{
     color: 'black',
     fontSize: 18,
@@ -172,19 +525,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
     flexWrap: 'wrap',
     justifyContent: 'center',
+    borderBottomWidth: 2,
+    borderBottomColor: '#dddddd',
   },
   item:{
-      
     width: 40 ,
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
-    
   },
   Text:{
-      
-      
       color: 'white',
       fontSize: 25,
       top: 0,
@@ -200,6 +551,9 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       width: 40 ,
       height: 40,
+      borderWidth: 2,
+      borderColor: 'black',
+      
     },
   statBlock:{
     top: 20,
