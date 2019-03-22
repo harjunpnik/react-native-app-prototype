@@ -1,10 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image, Dimensions,Button } from 'react-native';
-//import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
-//import TopBar from '../components/TopBar.js';
-//import Note from './Note.js';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { StyleSheet, Text, View, TouchableOpacity, Image, Dimensions } from 'react-native';
 
+// Diemnsion variables
 var { height, width } = Dimensions.get('window');
 var box_count = 2;
 var box_height = (height - 82) / box_count;
@@ -26,7 +23,7 @@ export default class MagicCounter extends React.Component {
   }
     
 
-  // I strugled with passing the props.navigation to TopBar.js so lets do it all in one file...
+
   static navigationOptions = {
     // header to null so we can use our own header/topBar
     header: null,
@@ -36,7 +33,7 @@ export default class MagicCounter extends React.Component {
     return (
       <View style={styles.container}>
 
-        {/* TOP BAR*/}
+        {/*TOP BAR*/}
         <View style={styles.header}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')} style={styles.backTouchable} hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}>
               
@@ -54,6 +51,7 @@ export default class MagicCounter extends React.Component {
             
             <View style={{height: box_height, backgroundColor: this.state.player1color, justifyContent: 'center', alignItems: 'center', transform: [{ rotate: '180deg'}]}}>
 
+            {/*PLAYER 1*/}
             <View style={[styles.itemListColor, styles.upsideDown]}> 
 
                 <View style={styles.spacer}></View>
@@ -115,6 +113,7 @@ export default class MagicCounter extends React.Component {
             
             </View>
             
+            {/*PLAYER 2*/}
             <View style={{height: box_height, backgroundColor: this.state.player2color}} >
 
               <View style={styles.itemListColor}> 

@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text,  View, TextInput,  TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
+// CLASS FOR THE ORDER LIST, ALSO PLANNED TO BE USED AS A NOTE LIST/ INVENTORY
 export default class Note extends React.Component {
   render() {
     return (
@@ -13,7 +14,6 @@ export default class Note extends React.Component {
           <Text style={styles.noteDeleteText}>-</Text>
         </TouchableOpacity>
       </View>
- 
       
     );
   }
@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
   noteDeleteText:{
     color: 'white',
   },
-
 });
 
 

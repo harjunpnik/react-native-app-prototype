@@ -1,11 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity  } from 'react-native';
 
-//import Navigation from './Navigation.js';
-//import {StackNavigator} from 'react-navigation';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-
-
 //THIS CLASS IS ONLY FOR BUILDING BECAUSE I HAD PROBLEMS WITH PASSING THE PROPS.NAVIGATION TO THIS COMPONENT
 export default class TopBar extends React.Component {
 

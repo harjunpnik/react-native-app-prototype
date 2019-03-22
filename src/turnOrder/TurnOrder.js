@@ -1,11 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, ScrollView, TouchableOpacity, Image } from 'react-native';
-//import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
-//import TopBar from '../components/TopBar.js';
 import Note from './Note.js';
-
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-
 
 export default class TurnOrder extends React.Component {
 
@@ -17,7 +12,7 @@ export default class TurnOrder extends React.Component {
     }
   }
 
-  // I strugled with passing the props.navigation to TopBar.js so lets do it all in one file...
+
   static navigationOptions = {
     // header to null so we can use our own header/topBar
     header: null,
@@ -25,6 +20,7 @@ export default class TurnOrder extends React.Component {
 
   render() {
     
+    //Maps the noteArray
     let notes = this.state.noteArray.map((val, key) => {
       return <Note key={key} keyval={key} val={val}
         deleteMethod={ ()=> this.deleteNote(key)} />
@@ -33,21 +29,20 @@ export default class TurnOrder extends React.Component {
     return (
       <View style={styles.container}>
 
-      {/* TOP BAR*/}
-      <View style={styles.header}>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')} style={styles.backTouchable} hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}>
-            
+        {/*TOP BAR*/}
+        <View style={styles.header}>
+
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')} style={styles.backTouchable} hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}>    
             <Image style={styles.backArrow} source={require('../imgs/backArrow.png')}/>
           </TouchableOpacity>
           <Text style={styles.headerText}> Turn Order </Text>
 
-      </View>
+        </View>
 
+        {/*MAIN CONTENT*/}
         <View style={styles.top}>
 
-          <TextInput onChangeText={(noteText) => this.setState({noteText}) } value={this.state.noteText} style={styles.textInput} placeholder= "> Name" placeholderTextColor="white" underlineColorAndroid="transparent">
-
-          </TextInput>
+          <TextInput onChangeText={(noteText) => this.setState({noteText}) } value={this.state.noteText} style={styles.textInput} placeholder= "> Name" placeholderTextColor="white" underlineColorAndroid="transparent"></TextInput>
 
           <TouchableOpacity onPress={this.addNote.bind(this)} style={styles.addButton}>
             <Text style={styles.addButtonText}>Add</Text>
@@ -56,18 +51,16 @@ export default class TurnOrder extends React.Component {
           <ScrollView style={styles.scrollContainer}>
             {notes}
           </ScrollView>
-        </View>
-
-        <View style={styles.top}>
-
-          
 
         </View>
+
+        <View style={styles.top}></View>
 
       </View>
     );
   }
 
+  //Adds Note / person to the list
   addNote(){
     if (this.state.noteText )  {
       this.state.noteArray.push({
@@ -79,6 +72,7 @@ export default class TurnOrder extends React.Component {
     }
   }
 
+  //Deletes Note / person from order
   deleteNote(key){
     this.state.noteArray.splice(key, 1);
     this.setState({noteArray: this.state.noteArray});
@@ -150,7 +144,7 @@ const styles = StyleSheet.create({
   addButtonText:{
     color: '#fff',
     fontSize: 24,
-  }
+  },
 });
 
 
